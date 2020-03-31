@@ -1,4 +1,5 @@
 # This is a command line based sound player made using Python 3.8.2
+# Requires the playsound library
 # Requires a "Sounds" folder in the same directory that you're running this from
 
 import os
