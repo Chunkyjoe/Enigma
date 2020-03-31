@@ -1,5 +1,5 @@
 # This is a command line based sound player
-# Requires sound 
+# Requires a "sound" folder in the same directory as the folder you're running this from
 import os
 from playsound import playsound
 
