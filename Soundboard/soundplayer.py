@@ -9,6 +9,7 @@ from playsound import playsound
 def sound_player():
 
     directory = dirname = os.path.dirname(__file__) + "\\Sounds\\"
+    err = 1
 
     while(1):
 
@@ -21,6 +22,7 @@ def sound_player():
         print("Type exit to exit this program.")
 
         user_input = input(str(user_input))
+
         if user_input == str('play'):
             user_input = ''
 
@@ -35,13 +37,20 @@ def sound_player():
             if user_input in list:
                 playsound(directory + user_input + '.mp3')
 
-        elif user_input == str('changedir'):
-            directory = ''
-            directory = input(str(directory))
-            print("The directory is now: " + directory)
+        elif (user_input == str('changedir')):
+            while(user_input == str('changedir') and err == 1):
+                directory = ''
+                directory = input(str(directory))
+                try:    
+                    list = os.listdir(directory)
+                    print("The directory is now: " + directory)
+                    err = 0
+                except OSError: # Captures error when selecting an invalid directory
+                    err = 1
+                    print("Invalid directory! Try again.")
+            
 
         elif user_input == str('files'):
-            list = os.listdir(directory)
             for x in list:
                 print(x)
 
