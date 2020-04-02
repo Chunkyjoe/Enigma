@@ -16,7 +16,7 @@ def sound_player():
         user_input = ''
         print("\n")
         print("Welcome to the Wacky Soundboard Sound Player!\n")
-        print("Type play to play a sound test file.")
+        print("Type play to play a sound file.")
         print("Type files to list the files in the folder.")
         print("Type changedir to change the file directory")
         print("Type exit to exit this program.")
